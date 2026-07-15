@@ -1,6 +1,6 @@
-# Guardial — LLM Prompt Shield (GenAI Hackathon)
+# vigi — LLM Prompt Shield (GenAI Hackathon)
 
-Guardial is a production‑ready prompt shielding web app and API that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. Built for reliability and clarity so judges and users can see exactly what decisions the system made and why.
+Vigi is a production‑ready prompt shielding web app and API that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. Built for reliability and clarity so judges and users can see exactly what decisions the system made and why.
 
 This project is designed for fast demos and real deployments (Cloud Run). It favors simple, auditable code and policy‑driven behavior over black boxes.
 
@@ -22,7 +22,7 @@ Highlights
 - Frontend UX tips
 - Deploy to Google Cloud Run (Buildpacks)
 - Security & privacy notes
-- Extending Guardial
+- Extending Vigi
 - How it meeds the criteria for an LLM Gaurd
 
 ---
@@ -216,7 +216,7 @@ Continuous deployment
 
 ---
 
-## Extending Guardial
+## Extending vigi
 
 Add a new detector
 1. Implement a helper in `llm_detectors.py` (or a traditional function/library)
@@ -252,4 +252,4 @@ Copyright © Contributors. For hackathon evaluation and demo use. Add a LICENSE 
 
 ## Maintainers
 
-Team Guardial — built for the GenAI Hackathon.
+Team Vigi — built for the GenAI Hackathon.

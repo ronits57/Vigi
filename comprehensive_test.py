@@ -1,5 +1,5 @@
 """
-Comprehensive test suite for Guardial platform
+Comprehensive test suite for Vigi platform
 Tests all major endpoints and functionality
 """
 
@@ -47,7 +47,7 @@ def test_endpoint(name, url, method="GET", data=None, files=None, expected_statu
 def run_tests():
     """Run comprehensive tests"""
     print(f"\n{test_color('='*60, 'blue')}")
-    print(f"{test_color('GUARDIAL COMPREHENSIVE TEST SUITE', 'blue')}")
+    print(f"{test_color('VIGI COMPREHENSIVE TEST SUITE', 'blue')}")
     print(f"{test_color('='*60, 'blue')}\n")
     
     results = {"passed": 0, "failed": 0}

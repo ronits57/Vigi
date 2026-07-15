@@ -1,4 +1,4 @@
-# Guardial: Enterprise AI Safety & Compliance Platform
+# Vigi: Enterprise AI Safety & Compliance Platform
 ## Architecture Presentation for Judges
 
 ---
@@ -14,7 +14,7 @@
 
 ---
 
-## 💡 Our Solution: Guardial
+## 💡 Our Solution: Vigi
 
 **A unified platform combining:**
 1. **Prompt Shield** - Real-time safety layer
@@ -30,7 +30,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    GUARDIAL PLATFORM                        │
+│                    Vigi PLATFORM                        │
 │                  (Flask + Python Backend)                   │
 └─────────────────────────────────────────────────────────────┘
                             │
@@ -234,7 +234,7 @@ User Input
 | Method | Time | Compute Cost | Compliance Risk |
 |--------|------|--------------|-----------------|
 | **Full Retraining** | 14-16 hours | $500-1000 | High (data exposure) |
-| **Guardial Unlearning** | 30-40 min | $20-50 | Low (targeted) |
+| **Vigi Unlearning** | 30-40 min | $20-50 | Low (targeted) |
 | **Speedup** | **23x faster** | **20x cheaper** | **Significantly safer** |
 
 ### Key Advantages:
@@ -415,7 +415,7 @@ Traditional Approach (per compliance request):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Annual cost (10 requests): $9,000-18,000
 
-Guardial Approach:
+vigi Approach:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 • Targeted unlearning: $20-50
 • Engineer time: $50-100 (30-40 min)
@@ -434,7 +434,7 @@ Annual cost (10 requests): $700-1,500
 
 ## 🎓 Technical Innovations
 
-### What Makes Guardial Unique:
+### What Makes Vigi Unique:
 
 1. **First ISR Threshold Implementation**
    - Configurable hallucination prevention
@@ -463,11 +463,11 @@ Annual cost (10 requests): $700-1,500
 
 ---
 
-## 🏆 Why Guardial Wins
+## 🏆 Why Vigi Wins
 
 ### Competitive Advantages:
 
-| Aspect | Traditional | Competitors | Guardial |
+| Aspect | Traditional | Competitors | Vigi |
 |--------|------------|-------------|----------|
 | **Unlearning Time** | 14-16h | 4-8h | 30-40min ✓ |
 | **Cost per Request** | $900-1800 | $300-500 | $70-150 ✓ |
@@ -481,7 +481,7 @@ Annual cost (10 requests): $700-1,500
 
 ## 🎯 Conclusion
 
-### Guardial delivers:
+### Vigi delivers:
 
 ✅ **Speed:** 23x faster compliance  
 ✅ **Cost:** 92% savings  
@@ -497,7 +497,7 @@ Annual cost (10 requests): $700-1,500
 
 ## 📞 Technical Details
 
-- **GitHub:** ace-ify/Guardial
+- **GitHub:** ace-ify/vigi
 - **Tech Stack:** Python, Flask, Transformers, ChromaDB, Gemini
 - **Deployment:** Google Cloud Run
 - **License:** Enterprise-ready
@@ -508,5 +508,5 @@ Annual cost (10 requests): $700-1,500
 # Thank You
 ## Questions?
 
-**Guardial: Enterprise AI Safety & Compliance**
+**vigi: Enterprise AI Safety & Compliance**
 *Because compliance shouldn't take 16 hours.*

@@ -286,12 +286,12 @@ def shield_prompt():
         
         # --- Generate LLM response using Google Gemini ---
         try:
-            model = genai.GenerativeModel('gemini-2.5-flash')
+            model = genai.GenerativeModel('gemini-3.5-flash')
             response = model.generate_content(processed_prompt)
             llm_response = response.text
             trace.append({
                 "step": "llm_generation",
-                "model": "gemini-2.5-flash",
+                "model": "gemini-3.5-flash",
                 "decision": "ok",
             })
         except Exception as e:
@@ -299,7 +299,7 @@ def shield_prompt():
             logger.error(f"LLM Error: {e}")
             trace.append({
                 "step": "llm_generation",
-                "model": "gemini-2.5-flash",
+                "model": "gemini-3.5-flash",
                 "decision": "error",
                 "reason": str(e)
             })
@@ -699,7 +699,7 @@ def api_auditor_query():
             logger.info(f"ISR check passed. Generating grounded LLM response.")
             
             try:
-                model = genai.GenerativeModel('gemini-2.5-flash')
+                model = genai.GenerativeModel('gemini-3.5-flash')
                 # Augment the prompt with the retrieved context
                 retrieved_doc = isr_decision.get('matched_document', '')
                 grounded_prompt = f"""

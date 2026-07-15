@@ -1,4 +1,4 @@
-"""Quick test to verify core Guardial functionality without heavy ML dependencies"""
+"""Quick test to verify core Vigi functionality without heavy ML dependencies"""
 
 import sys
 print("✅ Python import working")

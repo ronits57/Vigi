@@ -1,6 +1,6 @@
-# Guardial Demo - Test Cases for Hackathon Presentation
+# Vigi Demo - Test Cases for Hackathon Presentation
 
-This folder contains test prompts to demonstrate the Guardial capabilities.
+This folder contains test prompts to demonstrate the Vigi capabilities.
 
 ## How to Use
 

@@ -1,6 +1,6 @@
-# Guardial - Obliviate Integration Plan
+# Vigi - Obliviate Integration Plan
 
-This file tracks the implementation of features from "Obliviate" into the "Guardial" application.
+This file tracks the implementation of features from "Obliviate" into the "Vigi" application.
 
 ## Phase 1: Core Feature Implementation
 
@@ -31,7 +31,7 @@ This file tracks the implementation of features from "Obliviate" into the "Guard
 
 ## Phase 2: Integration and Refinement
 
-- [ ] Integrate the new features into the existing Guardial navigation/UI.
+- [ ] Integrate the new features into the existing Vigi navigation/UI.
 - [ ] Ensure the visual style is consistent with the current `test.html`.
 - [ ] Write tests for the new functionalities.
 - [ ] Refine the implementation based on the identified research papers.
