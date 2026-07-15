@@ -1,6 +1,6 @@
 # Vigi — LLM Prompt Shield 
 
-Vigi is a production‑ready prompt shielding web app and API that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. 
+Vigi is a production‑ready prompt shielding web app that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. 
 
 This project is designed for fast demos and real deployments (Cloud Run). It favors simple, auditable code and policy‑driven behavior over black boxes.
 
