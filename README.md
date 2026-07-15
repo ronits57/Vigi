@@ -94,46 +94,6 @@ Sanity test
 python smoke_test.py
 ```
 
----
-
-## API reference
-
-1) POST `/shield_prompt`
-- Request: `{"prompt": "<user text>"}`
-- Responses:
-	- 200 success
-		- `{"status": "success", "original_prompt": "...", "processed_prompt": "...", "llm_response": "...", "trace": [...]}`
-	- 403 blocked (input)
-		- `{"status": "blocked", "reason": "...", "trace": [...]}`
-	- 403 blocked (response screen)
-		- `{"status": "blocked_response", "reason": "...", "llm_output_blocked": "...", "trace": [...]}`
-
-Trace entries
-- Each step adds `{ step, strategy, decision, reason? }` so decisions are explainable.
-
-2) GET `/api/policy`
-- Returns the loaded `policy.json` (what strategies are active, thresholds, etc.).
-
-3) GET `/api/logs?limit=200`
-- Returns `{ events: [ ... ] }` parsed from `prompt_shield.log` where every event is a compact JSON record tagged with `EVENT_JSON`.
-
----
-
-## Policy configuration
-
-`policy.json` lets you enable/disable detectors and choose a strategy per module:
-- `ml` — use trained model or library (e.g., spaCy)
-- `heuristic` — keywords / rules
-- `llm` — use the LLM helper functions exclusively when available
-- `hybrid` — combine traditional and LLM; if any flags, we act (block/redact)
-
-Example knobs
-- `enabled_detectors.harmful_content.strategy` = `llm`
-- `enabled_detectors.harmful_content.threshold` = `0.5`
-- `enabled_detectors.pii_redaction.entity_types` = `["PERSON","ORG","GPE"]`
-- `response_screening.enabled` = `true|false`
-- `llm.model` = `gemini-2.5-flash` (default used in code if unspecified)
-
 Behavioral optimizations
 - When harmful content strategy is `llm`, the app skips loading the local model for faster cold starts.
 - Redaction always includes a light regex pass for emails/phones even if spaCy isn’t installed.
@@ -141,10 +101,6 @@ Behavioral optimizations
 ---
 
 ## Observability and logs
-
-Where
-- File: `prompt_shield.log`
-- API: `GET /api/logs?limit=...`
 
 Event shape (examples)
 - `BLOCK` (harmful or injection)
@@ -166,47 +122,6 @@ Every event includes a UTC timestamp, a preview of the LLM response (safe trunca
 Keyboard shortcuts
 - Ctrl/Cmd + Enter to send
 
----
-
-## Deploy to Google Cloud Run (Buildpacks)
-
-This repo is deployment‑ready without a Dockerfile.
-
-What’s included
-- `Procfile` — `web: gunicorn -k gthread -w 2 -b :$PORT app:app`
-- `requirements.txt` — includes `gunicorn`
-- `app.py` — binds to `0.0.0.0:$PORT`
-
-UI (Deploy from source)
-1. Select repo and set Branch to `^main$`
-2. Build Type: Google Cloud’s buildpacks
-3. Build context: `/`
-4. Entrypoint: leave blank (Buildpacks reads `Procfile`)
-5. Service: allow unauthenticated, min=0, max=3–10, timeout=300s
-6. Variables & Secrets: add `GEMINI_API_KEY` from Secret Manager (latest)
-7. Deploy
-
-CLI (PowerShell)
-
-```powershell
-# One-time secret
-$tmp = "$env:TEMP\gemini_key.txt"; Set-Content -Path $tmp -Value "YOUR_KEY"
-gcloud secrets create GEMINI_API_KEY --replication-policy="automatic"
-gcloud secrets versions add GEMINI_API_KEY --data-file="$tmp"
-
-# Deploy from source with Buildpacks
-gcloud run deploy prompt-shield `
-	--source . `
-	--region us-central1 `
-	--allow-unauthenticated `
-	--set-secrets GEMINI_API_KEY=GEMINI_API_KEY:latest
-```
-
-Continuous deployment
-- Create a Cloud Build trigger on `main` so every push rebuilds a new revision.
-
----
-
 ## Security & privacy notes
 
 - Never commit `.env`; use Secret Manager in production.
@@ -214,20 +129,6 @@ Continuous deployment
 - PII redaction is conservative and layered: regex + spaCy (if installed) + optional LLM pass in `llm`/`hybrid`.
 - Public assets never contain secrets. A placeholder file documents the risk.
 
----
-
-## Extending vigi
-
-Add a new detector
-1. Implement a helper in `llm_detectors.py` (or a traditional function/library)
-2. Wire it through `detectors.py` with a strategy gate
-3. Add config knobs to `policy.json`
-4. Update the UI flow renderer if you want the step visualized
-
-Swap LLMs
-- `llm_detectors.py` centralizes prompt templates; add a model switch here and surface it in `policy.json`.
-
----
 
 ## How this meets the needs of a model armor
 
