@@ -1,6 +1,6 @@
-# vigi — LLM Prompt Shield (GenAI Hackathon)
+# Vigi — LLM Prompt Shield 
 
-Vigi is a production‑ready prompt shielding web app and API that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. Built for reliability and clarity so judges and users can see exactly what decisions the system made and why.
+Vigi is a production‑ready prompt shielding web app and API that makes LLM interactions safer. It detects and blocks prompt injection, screens for harmful content, and automatically redacts PII on both input and output—complete with live traces, structured logs, and a clean chat UI. 
 
 This project is designed for fast demos and real deployments (Cloud Run). It favors simple, auditable code and policy‑driven behavior over black boxes.
 
@@ -246,10 +246,10 @@ Swap LLMs
 
 ## License
 
-Copyright © Contributors. For hackathon evaluation and demo use. Add a LICENSE file if you plan to open‑source.
+Copyright © Ronit Sherawat
 
 ---
 
 ## Maintainers
 
-Team Vigi — built for the GenAI Hackathon.
+Team Vigi — Anshika Gupta and Ronit Sherawat
